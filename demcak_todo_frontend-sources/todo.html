@@ -1,0 +1,57 @@
+
+<div class="container" ng-controller="net-demcak-TODO-controller">
+    <div class="row">
+        <h1>Todo demcak</h1>
+    </div>
+    <div class="row ">
+        <div class="col-sm-4 col-md-3 col-xs-4">
+                
+        </div>
+    </div>
+    <div class="row d_margin">
+       
+    <!-- BEGIN user input -->
+        <div class="col-sm-4 col-md-4 col-xs-12 wrapper box1">
+        <h2>User info</h2>
+        <img  class="img-responsive" src="http://simpleicon.com/wp-content/uploads/user1.png">
+         <p>Filter by title TODO <input type="text" ng-model="filterByTitle"></p> 
+         <h2>Create new task</h2>
+        <div class="input-block-level">
+        <form>
+            <input type="text" ng-model="newTodo.title" placeholder="What" maxlength="35">
+            <input type="date" ng-model="newTodo.date">
+            <textarea ng-model="newTodo.description" placeholder="Description"></textarea>
+
+            <button ng-click="addNewTodo()">Add new Task</button>
+        </form>
+       </div>
+        <!-- TODO OR BETWEEN <input type="date" ng-model="from"> AND <input type="date" ng-model="to">-->
+        </div>
+        <div class="col-sm-4 col-md-4 col-xs-12 wrapper box2 larger-font-size">
+            <h2>Tasks unfin - {{(todosList|filter:{archive:false}).length}}</h2>
+            <div class="row" ng-repeat="actTodo in todosList | orderBy: '-date':true | filter:filterByTitle | filter:{archive:false}">
+                <h3><a ng-click="setSelectedTask(actTodo)">{{actTodo.title}}</a></h3>
+                <div class="col-sm-9 col-md-9 col-xs-9">{{actTodo.date}}</div>
+                <div class="col-sm-3 col-md-3 col-xs-3">
+                    <button type="submit" style="border: 0; background: transparent" ng-click="makeDone(actTodo)" >
+                        <img src="OK.png" alt="submit" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-md-4 col-xs-12 wrapper box3 larger-font-size">
+            <h2>Archive</h2>  
+                <div class="row" ng-repeat="actTodo in todosList | orderBy: '-date':true | filter:filterByTitle | filter:{archive:true}">
+                <div class="col-sm-6 col-md-6 col-xs-6">{{actTodo.title}}</div>
+                <div class="col-sm-3 col-md-3 col-xs-3">{{actTodo.date}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-md-3 col-xs-4">
+             <div class="row "><h3>Task - {{selectedTodoTask.title}}</h3></div>  
+             <div class="row "><p>Date - {{selectedTodoTask.date}}</p></div>   
+             <div class="row "><p>Description - {{selectedTodoTask.description}}</p></div>  
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AngularJS demcak todo</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>   
+    
+    <script src="demcak-app.js"></script>
+    <style type="text/css">
+    body{
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+    .row:nth-of-type(even) {
+        background: #e0e0e0;
+    }
+    .d_margin{
+         padding-left:50px;
+         padding-right:50px;
+    }
+    .wrapper {
+      height: 700px;
+      overflow: auto;
+    }
+    .box1 {
+      background-color: #f9f9f9;
+    }
+    .box1  input{
+     width: "100%";
+    }
+    .box2 {
+      background-color: #f9f9f9;
+    }
+    .box3 {
+      background-color: #f9f9f9;
+    }
+    .larger-font-size{
+        font-size: larger;
+    }
+    a{
+        cursor: pointer;
+    }
+    input[type=text], input[type=date], textarea { width: 100%; box-sizing: border-box; height: 28px; }
+    textarea {
+        min-height: 10%;
+        resize: none;
+    }
+    </style>
+  </head>
+  <body ng-app="demcakTODOapp">
+    <div ng-view>
+    </div> 
+  </body>
+</html>

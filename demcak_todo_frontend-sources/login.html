@@ -1,0 +1,11 @@
+
+    <div class="container"  ng-controller="LoginController as loginCtrl">
+      <form class="login-form" ng-submit="loginCtrl.postForm()">
+        <h2>Demcak Todo app Login</h2>
+        <input type="text" class="form-control" placeholder="Username" required autofocus ng-model="loginCtrl.inputData.username">
+        <input type="password" class="form-control" placeholder="Password" required ng-model="loginCtrl.inputData.password">
+		<br>
+		<div class="alert alert-danger" role="alert" ng-show="errorMsg">{{errorMsg}}</div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+    </div> 
